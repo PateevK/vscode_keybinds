@@ -97,7 +97,7 @@
   {
     "key": "ctrl+q",
     "command": "workbench.action.closeActiveEditor",
-    "when": "editorFocus",
+    "when" : "!terminalFocus"
   },
   {
     "key": "ctrl+w",
