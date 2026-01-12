@@ -238,4 +238,9 @@
     "key": "alt+g",
     "command": "workbench.action.gotoLine"
   },
+   {
+    "key": "alt+f",
+    "command": "editor.foldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
 ]
