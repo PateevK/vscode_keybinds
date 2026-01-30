@@ -136,16 +136,16 @@
     "command": "-workbench.action.focusAboveGroup"
   },
   {
-    "key": "ctrl+s",
+    "key": "ctrl+shift+s",
     "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.splitEditorRight"
   },
   {
     "key": "ctrl+k ctrl+\\",
     "command": "-workbench.action.splitEditorDown"
-  },
-  {
-    "key": "ctrl+shift+s",
-    "command": "workbench.action.splitEditorRight"
   },
   {
     "key": "ctrl+w",
@@ -241,6 +241,16 @@
    {
     "key": "alt+f",
     "command": "editor.foldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "alt+shift+f",
+    "command": "editor.unfoldRecursively",
+    "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "editor.foldAll",
     "when": "editorTextFocus && foldingEnabled"
   },
 ]
