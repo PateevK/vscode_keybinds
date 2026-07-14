@@ -5,31 +5,61 @@
   "command": "extension.jumpy-word",
   "when": "editorTextFocus"
 },
-  // FILE TREE
+  // EXPLORER
 {
   "key": "ctrl+e",
-  "command": "workbench.files.action.focusFilesExplorer",
+  "command": "workbench.files.action.focusFilesExplorer"
 },
 {
   "key": "ctrl+e",
   "command": "workbench.action.toggleSidebarVisibility",
   "when": "filesExplorerFocus"
 },
-  // EDITOR VIEW
+{
+  "key": "n",
+  "command": "explorer.newFile",
+  "when": "filesExplorerFocus && !inputFocus"
+},
+{
+  "command": "renameFile",
+  "key": "r",
+  "when": "filesExplorerFocus && !inputFocus"
+},
+{
+  "key": "ctrl+n",
+  "command": "explorer.newFile",
+  "when": "explorerViewletFocus"
+},
+{
+  "key": "ctrl+shift+n",
+  "command": "explorer.newFolder",
+  "when": "explorerViewletFocus"
+},
+{
+  "command": "deleteFile",
+  "key": "d",
+  "when": "filesExplorerFocus && !inputFocus"
+},
+  // EDITORS VIEW
 {
   "key": "ctrl+shift+e",
-  "command": "workbench.files.action.focusOpenEditorsView",
+  "command": "workbench.files.action.focusOpenEditorsView"
 },
 {
   "key": "ctrl+shift+e",
   "command": "workbench.action.toggleSidebarVisibility",
   "when": "openEditorsFocus"
 },
-  // --------------------
+  // SAVE
 {
   "key": "ctrl+shift+w",
   "command": "saveAll"
 },
+{
+  "key": "ctrl+w",
+  "command": "workbench.action.files.save"
+},
+// PANEL & TERMINAL
 {
   "key": "ctrl+t",
   "command": "workbench.action.togglePanel"
@@ -69,37 +99,60 @@
   "command": "workbench.action.terminal.kill",
   "when": "terminalFocus"
 },
+  // EDITOR
 {
   "key": "ctrl+q",
   "command": "workbench.action.closeActiveEditor",
   "when" : "!terminalFocus"
 },
 {
-  "key": "n",
-  "command": "explorer.newFile",
-  "when": "filesExplorerFocus && !inputFocus"
+  "key": "ctrl+shift+s",
+  "command": "workbench.action.splitEditorDown"
 },
 {
-  "command": "renameFile",
-  "key": "r",
-  "when": "filesExplorerFocus && !inputFocus"
+  "key": "ctrl+s",
+  "command": "workbench.action.splitEditorRight"
 },
 {
-  "key": "ctrl+n",
-  "command": "explorer.newFile",
-  "when": "explorerViewletFocus"
+  "key": "ctrl+shift+q",
+  "command": "workbench.action.closeEditorsInGroup"
 },
 {
-  "key": "ctrl+shift+n",
-  "command": "explorer.newFolder",
-  "when": "explorerViewletFocus"
+  "key": "ctrl+,",
+  "command": "workbench.action.previousEditorInGroup",
+  "when": "!panelFocus"
 },
 {
-  "command": "deleteFile",
-  "key": "d",
-  "when": "filesExplorerFocus && !inputFocus"
+  "key": "ctrl+.",
+  "command": "workbench.action.nextEditorInGroup",
+  "when": "!panelFocus"
 },
-
+{
+  "key": "ctrl+g",
+  "command": "editor.action.revealDefinition",
+  "when": "editorHasImplementationProvider && editorTextFocus"
+},
+{
+  "key": "ctrl+i",
+  "command": "editor.action.showHover",
+  "when": "editorTextFocus"
+},
+  // FOLD
+{
+  "key": "alt+f",
+  "command": "editor.foldRecursively",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+shift+f",
+  "command": "editor.unfoldRecursively",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "ctrl+alt+f",
+  "command": "editor.foldAll",
+  "when": "editorTextFocus && foldingEnabled"
+},
 // EXTRA
 {
   "key": "alt+m", // Choose your preferred shortcut (e.g., "alt+m")
@@ -118,11 +171,6 @@
   "command": "workbench.action.toggleZenMode"
 },
 {
-  "key": "ctrl+i",
-  "command": "editor.action.showHover",
-  "when": "editorTextFocus"
-},
-{
   "key": "ctrl+h",
   "command": "workbench.action.focusLeftGroup"
 },
@@ -136,20 +184,8 @@
   "command": "workbench.action.focusBelowGroup"
 },
 {
-  "key": "ctrl+w",
-  "command": "workbench.action.files.save"
-},
-{
   "key": "ctrl+k",
   "command": "workbench.action.focusAboveGroup"
-},
-{
-  "key": "ctrl+shift+s",
-  "command": "workbench.action.splitEditorDown"
-},
-{
-  "key": "ctrl+s",
-  "command": "workbench.action.splitEditorRight"
 },
 {
   "key": "alt+l",
@@ -171,50 +207,16 @@
   {
   "key" : "ctrl+.",
   "command": "workbench.action.nextPanelView",
-  "when": "panelFocus",
-},
-{
-  "key": "ctrl+shift+q",
-  "command": "workbench.action.closeEditorsInGroup"
+  "when": "panelFocus"
 },
 {
   "key" : "ctrl+,",
   "command": "workbench.action.previousPanelView",
-  "when": "panelFocus",
-},
-{
-  "key": "ctrl+,",
-  "command": "workbench.action.previousEditorInGroup",
-  "when": "!panelFocus",
-},
-{
-  "key": "ctrl+.",
-  "command": "workbench.action.nextEditorInGroup",
-  "when": "!panelFocus",
-},
-{
-  "key": "ctrl+g",
-  "command": "editor.action.revealDefinition",
-  "when": "editorHasImplementationProvider && editorTextFocus"
+  "when": "panelFocus"
 },
 {
   "key": "alt+g",
   "command": "workbench.action.gotoLine"
-},
-  {
-  "key": "alt+f",
-  "command": "editor.foldRecursively",
-  "when": "editorTextFocus && foldingEnabled"
-},
-{
-  "key": "alt+shift+f",
-  "command": "editor.unfoldRecursively",
-  "when": "editorTextFocus && foldingEnabled"
-},
-{
-  "key": "ctrl+alt+f",
-  "command": "editor.foldAll",
-  "when": "editorTextFocus && foldingEnabled"
 },
   // REMOVES
 {
@@ -230,7 +232,6 @@
   "key": "ctrl+k ctrl+\\",
   "command": "-workbench.action.splitEditorDown"
 },
-
 {
   "key": "ctrl+s",
   "command": "-workbench.action.files.save"
@@ -252,7 +253,6 @@
   "key": "ctrl+g",
   "command": "-workbench.action.gotoLine"
 },
-
 {
   "key": "ctrl+f12",
   "command": "-editor.action.goToImplementation",
@@ -274,7 +274,6 @@
   "key": "ctrl+w",
   "command": "-workbench.action.closeActiveEditor"
 },
-
 {
   "key": "ctrl+k ctrl+up",
   "command": "-workbench.action.focusAboveGroup"
@@ -283,7 +282,6 @@
   "key": "ctrl+f4",
   "command": "-workbench.action.closeActiveEditor"
 },
-
 {
   "key": "ctrl+k w",
   "command": "-workbench.action.closeEditorsInGroup"
@@ -291,5 +289,5 @@
 {
   "key": "ctrl+k ctrl+pagedown",
   "command": "-workbench.action.nextEditorInGroup"
-},
+}
 ] // keybinds end
